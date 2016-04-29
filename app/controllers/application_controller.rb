@@ -1,4 +1,4 @@
-require_relative '../helpers/sos/sos-core.rb'
+require_relative '../helpers/sos/lib/sos-core.rb'
 
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.

@@ -29,26 +29,31 @@ class TwedController < ApplicationController
     offerings.map { |offering| offering_to_json offering }
   end
 
-
 	def offering_to_json(offering)
-		{  offering: offering.identifier,	
-		   procedure: offering.procedure,
-		   observedProperty: offering.observableProperty,
-		   beginTime: offering.phenomenonTime.beginPosition,
-		   endTime: offering.phenomenonTime.endPosition }
+		{  offering: offering.identifier.to_s,
+		   procedure: offering.procedure.to_s,
+		   observedProperty: offering.observableProperty.map { |property| property.to_s },
+		   beginTime: offering.phenomenonTime.beginPosition.to_s,
+		   endTime: offering.phenomenonTime.endPosition.to_s }
   end
 
   def update_cache(result=[])
     result.each do |offering|
 
       cache_offering = CacheTwed.new
-      cache_offering.offering = offering.offering
-      cache_offering.procedure = offering.procedure
-      cache_offering.beginTime = offering.beginTime
-      cache_offering.endTime = offering.endTime
-      cache_offering.save if cache_offering.valid?
+      cache_offering.offering = offering[:offering]
+      cache_offering.procedure = offering[:procedure]
+      cache_offering.beginTime = offering[:beginTime]
+      cache_offering.endTime = offering[:endTime]
+      cache_offering.save
 
+      offering[:observedProperty].to_a.each do |value|
+        cache_property = CacheObservedProperty.new( property: value )
+        cache_property.save
+        OfferingProrpertyShip.create( cache_offering: cache_offering, cache_observed_property: cache_property )
       end
+
+    end
   end
 
 end

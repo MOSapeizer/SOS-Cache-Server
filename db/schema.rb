@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160429022759) do
+ActiveRecord::Schema.define(version: 20160429034641) do
+
+  create_table "cache_observed_properties", force: :cascade do |t|
+    t.string   "property"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "cache_offerings", force: :cascade do |t|
     t.string   "offering"
@@ -21,11 +27,6 @@ ActiveRecord::Schema.define(version: 20160429022759) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "type"
-  end
-
-  create_table "cache_offerings_observed_properties", force: :cascade do |t|
-    t.integer "cache_offering_id"
-    t.integer "observed_property_id"
   end
 
   create_table "cache_tweds", force: :cascade do |t|
@@ -40,10 +41,11 @@ ActiveRecord::Schema.define(version: 20160429022759) do
     t.datetime "updated_at",     null: false
   end
 
-  create_table "observed_properties", force: :cascade do |t|
-    t.string   "property"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "offering_prorperty_ships", force: :cascade do |t|
+    t.integer  "cache_offering_id"
+    t.integer  "cache_observed_property_id"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   create_table "users", force: :cascade do |t|

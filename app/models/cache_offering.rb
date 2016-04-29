@@ -1,6 +1,7 @@
 class CacheOffering < ActiveRecord::Base
 	has_many :observations
-	has_and_belongs_to_many :observedProperty
+  has_many :offering_prorperty_ships
+	has_many :cache_observed_properties, through: :offering_prorperty_ships
 
   validates :offering, :procedure, :beginTime, :endTime, presence: true
 
