@@ -1,0 +1,3 @@
+class CacheTwed < CacheOffering
+
+end
