@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160429034641) do
+ActiveRecord::Schema.define(version: 20160504011332) do
 
   create_table "cache_observed_properties", force: :cascade do |t|
     t.string   "property"
@@ -37,8 +37,9 @@ ActiveRecord::Schema.define(version: 20160429034641) do
   create_table "observations", force: :cascade do |t|
     t.string   "phenomenonTime"
     t.string   "result"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.integer  "cache_offering_id"
   end
 
   create_table "offering_prorperty_ships", force: :cascade do |t|
