@@ -2,7 +2,7 @@ class TwedController < ApplicationController
 
 	def index
     result = find_all_offerings
-		render json: result
+		render json: result, except: [:created_at, :updated_at]
 	end
 
   def offering
@@ -13,14 +13,6 @@ class TwedController < ApplicationController
 	end
 
 	protected
-
-	def offering_to_json(offering)
-		{  offering: offering.identifier.to_s,
-		   procedure: offering.procedure.to_s,
-		   observedProperty: offering.observableProperty.map { |property| property.to_s },
-		   beginTime: offering.phenomenonTime.beginPosition.to_s,
-		   endTime: offering.phenomenonTime.endPosition.to_s }
-  end
 
   def find_all_offerings
     CacheTwed.all

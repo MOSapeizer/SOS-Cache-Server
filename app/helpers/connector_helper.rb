@@ -11,7 +11,7 @@ module ConnectorHelper
 
 		def post(body=nil, &block)
 			@post = Net::HTTP::Post.new(uri.path)
-			@post["Content-type"] = "application/xml"
+			@post['Content-type'] = 'application/xml'
 			@post.body = body
 			@res = send @post
 			@result = yield @res.body if block_given?

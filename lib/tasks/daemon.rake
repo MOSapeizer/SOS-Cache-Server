@@ -38,7 +38,6 @@ def update_offering(result=[])
       cache_property.save
       OfferingProrpertyShip.create( cache_offering: cache_offering, cache_observed_property: cache_property )
     end
-
   end
 end
 
@@ -56,11 +55,12 @@ task start: :environment do
 
   Signal.trap('TERM') { abort }
 
-  Rails.logger.info "Start daemon..."
+  Rails.logger.info 'Start daemon...'
 
   loop do
+    puts 'update '
     update_offering find_all_offerings
-    puts "done"
+    puts 'done'
     sleep 10 * 60
   end
 

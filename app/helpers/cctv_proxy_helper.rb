@@ -1,0 +1,2 @@
+module CctvProxyHelper
+end
