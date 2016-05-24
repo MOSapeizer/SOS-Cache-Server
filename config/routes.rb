@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'twed/:offering' => 'twed#offering'
   get 'cctv/:station/:ccd' => 'cctv_proxy#cctv'
   get 'swcb' => 'swcb#index'
+  get 'swcb/:offering' => 'swcb#offering'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
