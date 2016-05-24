@@ -1,0 +1,2 @@
+class SwcbController < ApplicationController
+end

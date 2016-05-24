@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20160504011332) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "cache_observed_properties", force: :cascade do |t|
     t.string   "property"
     t.datetime "created_at", null: false

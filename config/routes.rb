@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'twed' => 'twed#index'
   get 'twed/:offering' => 'twed#offering'
   get 'cctv/:station/:ccd' => 'cctv_proxy#cctv'
+  get 'swcb' => 'swcb#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
