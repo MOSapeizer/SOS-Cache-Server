@@ -2,7 +2,7 @@ require_relative 'SOS/lib/sos-core.rb'
 
 
 def sos
-  Core::SOS.new('http://localhost:8080/twed_waterLevel/service')
+  Core::SOS.new('http://mos.csrsr.ncu.edu.tw:8080/twed_waterLevel/service')
 end
 
 def get_offerings
@@ -57,11 +57,11 @@ task start: :environment do
 
   Rails.logger.info 'Start daemon...'
 
-  loop do
+  # loop do
     puts 'update '
     update_offering find_all_offerings
     puts 'done'
-    sleep 10 * 60
-  end
+    # sleep 10 * 60
+  # end
 
 end
