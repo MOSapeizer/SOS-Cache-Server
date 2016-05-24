@@ -19,8 +19,10 @@ module SOSHelper
       @tag = Tag.new
       @tag.offering @projects[:offering].to_a
       @tag.property @projects[:observedProperty].to_a
-			temporal = @projects[:temporalFilter][:during][:timePeriod]
-      @tag.temporal temporal[:attributes][:id].to_a[0], temporal[:range].to_a[0]
+      unless @projects[:temporalFilter].nil?
+			  temporal = @projects[:temporalFilter][:during][:timePeriod]
+        @tag.temporal temporal[:attributes][:id].to_a[0], temporal[:range].to_a[0]
+      end
 
       summarize @base, @tag.output
 
@@ -33,6 +35,3 @@ module SOSHelper
 
 	end
 end
-
-# a =  SOSHelper::Boss.new(:procedure, ["1", "2"])
-# p a.done

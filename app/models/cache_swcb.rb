@@ -1,0 +1,2 @@
+class CacheSwcb < CacheOffering
+end

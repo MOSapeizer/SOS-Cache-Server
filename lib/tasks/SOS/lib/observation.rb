@@ -9,8 +9,20 @@ module SOSHelper
 
 		def parse
 			datalist = @xml.xpath("//sos:observationData")
-			@output = datalist.map { |data| [data.xpath(".//gml:timePosition").text, data.xpath(".//om:result").text] }
-		end
+			@output = datalist.map do |data|
+        { procedure: check_value(data.xpath('.//om:procedure')),
+          timeposition: data.xpath('.//gml:timePosition').text,
+          featureOfInterest: check_value(data.xpath('.//om:featureOfInterest')),
+          result: data.xpath('.//om:result').text }
+			end
+    end
+
+    def check_value(tag)
+      return tag.text.to_s if tag.text.to_s != ''
+      tag.map do |child|
+        child.xpath('.//@xlink:href').first.value.to_s
+      end
+    end
 
 		def to_json
 			{ data: output }.to_json
@@ -51,7 +63,7 @@ module SOSHelper
 			raise ArgumentError, 'Filters need to be hash' unless custom.is_a? Hash
 			return condition.to_s if custom == {}
 			condition.merge! custom
-			p condition
+			# p custom
 			self
 		end
 
