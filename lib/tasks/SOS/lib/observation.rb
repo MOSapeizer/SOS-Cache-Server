@@ -8,7 +8,7 @@ module SOSHelper
 		end
 
 		def parse
-			datalist = @xml.xpath("//sos:observationData")
+      datalist = @xml.xpath('//sos:observationData')
 			@output = datalist.map do |data|
         { procedure: check_value(data.xpath('.//om:procedure')),
           timeposition: data.xpath('.//gml:timePosition').text,
