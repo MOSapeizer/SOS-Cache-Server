@@ -2,22 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1b5581f3-ff38-4513-8a0e-941c44f3b93a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20160525032149_rename_column_of_feature_id.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/tasks/SOS/lib/request/getFeatureOfInterest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.rakeTasks" afterPath="$PROJECT_DIR$/.idea/.rakeTasks" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/SOS.iml" afterPath="$PROJECT_DIR$/.idea/SOS.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/swcb_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/swcb_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/cache_offering.rb" afterPath="$PROJECT_DIR$/app/models/cache_offering.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/cache_swcb.rb" afterPath="$PROJECT_DIR$/app/models/cache_swcb.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/tasks/SOS/lib/boss.rb" afterPath="$PROJECT_DIR$/lib/tasks/SOS/lib/boss.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/tasks/SOS/lib/factory.rb" afterPath="$PROJECT_DIR$/lib/tasks/SOS/lib/factory.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/tasks/SOS/lib/observation.rb" afterPath="$PROJECT_DIR$/lib/tasks/SOS/lib/observation.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/tasks/SOS/lib/sos-core.rb" afterPath="$PROJECT_DIR$/lib/tasks/SOS/lib/sos-core.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/tasks/SOS/lib/sosHelper.rb" afterPath="$PROJECT_DIR$/lib/tasks/SOS/lib/sosHelper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/tasks/daemon.rake" afterPath="$PROJECT_DIR$/lib/tasks/daemon.rake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/tasks/offering_task.rb" afterPath="$PROJECT_DIR$/lib/tasks/offering_task.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/tasks/swcb_rain_task.rb" afterPath="$PROJECT_DIR$/lib/tasks/swcb_rain_task.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/tasks/swcb_task.rb" afterPath="$PROJECT_DIR$/lib/tasks/swcb_task.rb" />
     </list>
     <ignored path="SOS.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -51,7 +38,38 @@
     <favorites_list name="SOS" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="swcb_controller.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/swcb_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="152">
+              <caret line="8" column="28" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cache_swcb.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/cache_swcb.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="31" selection-start-line="0" selection-start-column="31" selection-end-line="0" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cache_offering.rb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/models/cache_offering.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="361">
+              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -96,11 +114,9 @@
         <option value="$PROJECT_DIR$/db/migrate/20160524091349_create_features.rb" />
         <option value="$PROJECT_DIR$/app/models/offering_feature_ship.rb" />
         <option value="$PROJECT_DIR$/app/models/feature.rb" />
-        <option value="$PROJECT_DIR$/app/models/cache_offering.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20160524092011_add_column_of_feature.rb" />
         <option value="$PROJECT_DIR$/app/views/swcb/index.json.jbuilder" />
         <option value="$USER_HOME$/.rvm/gems/ruby-2.2.3/gems/activesupport-4.2.6/lib/active_support/json/encoding.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/swcb_controller.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20160524091258_create_offering_feature_ships.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20160525032149_rename_column_of_feature_id.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20160525035632_add_name_of_feature.rb" />
@@ -115,8 +131,10 @@
         <option value="$PROJECT_DIR$/lib/tasks/SOS/lib/sosHelper.rb" />
         <option value="$PROJECT_DIR$/lib/tasks/SOS/lib/boss.rb" />
         <option value="$PROJECT_DIR$/lib/tasks/SOS/lib/observation.rb" />
-        <option value="$PROJECT_DIR$/app/models/cache_swcb.rb" />
         <option value="$PROJECT_DIR$/lib/tasks/offering_task.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/swcb_controller.rb" />
+        <option value="$PROJECT_DIR$/app/models/cache_swcb.rb" />
+        <option value="$PROJECT_DIR$/app/models/cache_offering.rb" />
       </list>
     </option>
   </component>
@@ -134,8 +152,8 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-10" />
-    <option name="y" value="65" />
+    <option name="x" value="697" />
+    <option name="y" value="61" />
     <option name="width" value="1701" />
     <option name="height" value="1275" />
   </component>
@@ -286,38 +304,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SOS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SOS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="db" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SOS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SOS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="db" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="migrate" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -731,18 +717,18 @@
       <workItem from="1464004091852" duration="1177000" />
       <workItem from="1464056380425" duration="5197000" />
       <workItem from="1464066367435" duration="16797000" />
-      <workItem from="1464153408593" duration="7507000" />
+      <workItem from="1464153408593" duration="8157000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55657000" />
+    <option name="totallyTimeSpent" value="56307000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-10" y="65" width="1701" height="1275" extended-state="0" />
-    <editor active="false" />
+    <frame x="697" y="61" width="1701" height="1275" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27398914" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27398914" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29383117" sideWeight="0.4861846" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39772728" sideWeight="0.5114638" order="10" side_tool="true" content_ui="tabs" />
@@ -1049,14 +1035,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/swcb_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="27" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/tasks/SOS/lib/request/getFeatureOfInterest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
@@ -1153,14 +1131,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/cache_swcb.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/tasks/daemon.rake">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1009">
@@ -1201,18 +1171,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/cache_offering.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/cache_swcb_rain.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/swcb_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="28" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/cache_swcb.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="31" selection-start-line="0" selection-start-column="31" selection-end-line="0" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/cache_offering.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding />
         </state>
       </provider>

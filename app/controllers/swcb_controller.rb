@@ -12,10 +12,6 @@ class SwcbController < ApplicationController
     render json: @offering.observations, except: [:id, :created_at, :updated_at, :cache_offering_id]
   end
 
-  def observation
-
-  end
-
   protected
 
   def find_all_offerings
