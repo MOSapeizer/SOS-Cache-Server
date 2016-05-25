@@ -23,6 +23,7 @@ class SwcbRainTask < OfferingTask
         obs = cache_offering.observations.new
         obs.phenomenonTime = observation[:timeposition]
         obs.result = observation[:result]
+        obs.feature = observation[:featureOfInterest]
         obs.save
       end
     end
