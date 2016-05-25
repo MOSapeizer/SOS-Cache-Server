@@ -38,7 +38,7 @@ task updateSwcbRain: :environment do
 
   swcb = SwcbRainTask.new
   puts 'save '
-  swcb.clean_cache
+  # swcb.clean_cache
   swcb.save_observation
   puts 'done'
 
