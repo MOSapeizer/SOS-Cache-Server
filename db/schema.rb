@@ -50,9 +50,9 @@ ActiveRecord::Schema.define(version: 20160525032149) do
   create_table "features", force: :cascade do |t|
     t.string   "latitude"
     t.string   "longitude"
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "name"
   end
 
   create_table "observations", force: :cascade do |t|

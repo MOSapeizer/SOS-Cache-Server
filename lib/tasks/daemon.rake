@@ -62,7 +62,7 @@ task updateSwcb: :environment do
   Rails.logger.info 'Start daemon...'
 
   swcb = SwcbTask.new
-  puts 'save '
+  puts 'saving'
   swcb.save_observation
   puts 'done'
 

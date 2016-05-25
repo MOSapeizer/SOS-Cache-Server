@@ -10,8 +10,10 @@ module SOSHelper
 
 	Relics = %w(offering observedProperty featureOfInterest procedure spatialFilter temporalFilter responseFormat).freeze
 
-	fpath = File.dirname(__FILE__) + '/request/getObservation.xml'
-	ObservationRequest = File.open( fpath ) { |f| Nokogiri::XML(f)  }.freeze
+	ObsRequestPath = File.dirname(__FILE__) + '/request/getObservation.xml'
+	FeatureRequestPath = File.dirname(__FILE__) + '/request/getFeatureOfInterest.xml'
+	ObservationRequest = File.open( ObsRequestPath ) { |f| Nokogiri::XML(f) }.freeze
+	FeatureRequest = File.open( FeatureRequestPath ) { |f| Nokogiri::XML(f) }.freeze
 
 	class Tag
 
@@ -19,20 +21,31 @@ module SOSHelper
       @offering = ''
       @property = ''
       @temporal = ''
+			@feature = ''
     end
 
 		def offering(values=[])
-      result = values.map do |value|
-				' <sos:offering>' + value + '</sos:offering> '
-			end
+			return nil if values.empty?
+			result = values_map 'offering', values
 			@offering += result.join('  ')
 		end
 
+		def feature(values=[])
+			return nil if values.empty?
+			result = values_map 'featureOfInterest', values
+			@feature += result.join('  ')
+		end
+
 		def property(values=[])
-			result = values.map do |value|
-				' <sos:observedProperty>' + value + '</sos:observedProperty> '
-			end
+			return nil if values.empty?
+			result = values_map 'observedProperty', values
 			@property += result.join('  ')
+		end
+
+		def values_map(tag_name, values)
+			values.map do |value|
+				" <sos:#{tag_name}>" + value + "</sos:#{tag_name}> "
+			end
 		end
 
 		def temporal(id, time)
@@ -49,7 +62,7 @@ module SOSHelper
     end
 
     def output
-      @offering + @property + @temporal
+      @offering + @property + @feature + @temporal
     end
 
 	end

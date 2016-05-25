@@ -17,16 +17,20 @@ module SOSHelper
 
 		def assign
       @tag = Tag.new
-      @tag.offering @projects[:offering].to_a
-      @tag.property @projects[:observedProperty].to_a
+			@tag.feature check(:featureOfInterest)
+      @tag.offering check(:offering)
+			@tag.property check(:observedProperty)
       unless @projects[:temporalFilter].nil?
 			  temporal = @projects[:temporalFilter][:during][:timePeriod]
         @tag.temporal temporal[:attributes][:id].to_a[0], temporal[:range].to_a[0]
-      end
+			end
 
       summarize @base, @tag.output
-
       @base
+		end
+
+		def check(symbol)
+			@projects[symbol].nil? ? [] : @projects[symbol].to_a
 		end
 
 		def summarize(base=nil, bonus="")

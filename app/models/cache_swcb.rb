@@ -1,14 +1,13 @@
 class CacheSwcb < CacheOffering
 
   def as_json(options={})
-    opts = { :methods => [:id],
+    opts = { :methods => [:identify],
              :only => [:procedure,:beginTime,:endTime]}
     super(options.merge(opts))
   end
 
-  def id
+  def identify
     offering
   end
-
 
 end

@@ -18,7 +18,7 @@ module Core
 			# request to http://cgis.csrsr.ncu.edu.tw:8080/swcb-sos-new/service
 			@request = XmlRequest.new(url)
 			@capabilities = nil
-			@observations, @gc, @go = nil
+			@observations, @gf, @gc, @go = nil
 
 		end
 
@@ -31,7 +31,11 @@ module Core
 		def getObservations
 			@go = SOSHelper::GetObservation.new(request: @request)
 		end
-		
+
+		def getFeatureOfInterest
+			@gf = SOSHelper::GetFeatureOfInterest.new(request: @request)
+		end
+
 		def offerings
 			@offerings ||= @capabilities.contents.offerings
 		end

@@ -48,7 +48,7 @@ module SOSHelper
 		end
 
 		def DontWantToRefactorThisBecauseItIs(too_detail)
-			uniform too_detail if not too_detail.is_a? String
+			uniform too_detail unless too_detail.is_a? String
 		end
 
 		def checkOf(obj)
