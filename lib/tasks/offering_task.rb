@@ -53,7 +53,7 @@ class OfferingTask
       offering[:observedProperty].to_a.each do |value|
         cache_property = ObservedProperty.new(property: value )
         cache_property.save
-        OfferingProrpertyShip.create( cache_offering: cache_offering, cache_observed_property: cache_property )
+        OfferingProrpertyShip.create( cache_offering: cache_offering, observed_property: cache_property )
       end
     end
   end
