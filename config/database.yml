@@ -6,6 +6,9 @@
 #
 default: &default
   adapter: postgresql
+  host: localhost
+  username: rails_deploy
+  password: 1234567
   pool: 5
   timeout: 5000
 
