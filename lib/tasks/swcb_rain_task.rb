@@ -16,14 +16,21 @@ class SwcbRainTask < OfferingTask
     offerings = database.all.map(&:offering)
     @go = sos.getObservations
     @go.offering = offerings
-    begin_time = Time.now
-    range = begin_time.year.to_s + '-' + (begin_time.mon-3).to_s + '-' + (begin_time.day-2).to_s + 'T00:00:00.000Z ' +
-             begin_time.year.to_s + '-' + (begin_time.mon-3).to_s + '-' + (begin_time.day).to_s + 'T00:00:00.000Z'
-    @go.temporalFilter= range
+    # begin_time = Time.now
+    # range = begin_time.year.to_s + '-' + (begin_time.mon-3).to_s + '-' + (begin_time.day-2).to_s + 'T00:00:00.000Z ' +
+    #          begin_time.year.to_s + '-' + (begin_time.mon-3).to_s + '-' + (begin_time.day).to_s + 'T00:00:00.000Z'
+    # @go.temporalFilter= range
     @go.send do |response|
       obs = SOSHelper::Observation.new response
       next obs.parse
     end
+  end
+
+  def generate_cache_range(days=1)
+    begin_time = Time.now
+    range_start = begin_time.year.to_s + '-' + (begin_time.mon).to_s + '-' + (begin_time.day-days).to_s + 'T00:00:00.000Z'
+    range_stop = begin_time.year.to_s + '-' + (begin_time.mon).to_s + '-' + (begin_time.day).to_s + 'T00:00:00.000Z'
+    range_start + ' ' + range_stop
   end
 
 end
