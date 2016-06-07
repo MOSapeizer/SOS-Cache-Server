@@ -4,6 +4,8 @@ class OfferingTask
 
   def initialize(url)
     @service = Core::SOS.new(url)
+    @count_of_observations = 0
+    @count_of_features = 0
   end
 
   def database
@@ -66,6 +68,8 @@ class OfferingTask
 
   def save_observation
     update_observation find_all_observations
+    p "observations updated done, total: #{@count_of_observations}"
+    p "Feature updated done, total: #{@count_of_features}"
   end
 
   def find_all_observations
@@ -74,9 +78,9 @@ class OfferingTask
 
   def update_observation(result=[])
     result.each do |observation|
-      obs = Observation.find_by result: observation[:result]
+      obs = Observation.find_by result: observation[:result],
+                                phenomenonTime: observation[:timeposition]
       create_observation(observation) if obs.nil?
-
       # there we only parse reference of feature
       # so we need to send another request to get Position
       find_feature observation
@@ -84,25 +88,25 @@ class OfferingTask
   end
 
   def create_observation( observation )
-    p 'No observation, create one'
     cache_offering = database.find_by procedure: observation[:procedure]
+    p "No observation, create one for #{cache_offering.offering}"
     obs = cache_offering.observations.new
     obs.phenomenonTime = observation[:timeposition]
     obs.result = observation[:result]
     obs.save
-    p 'observations created'
+    @count_of_observations += 1
   end
 
   def find_feature( observation  )
-    p 'Find out new feature info'
+    # p 'Find out new feature info'
     observation[:featureOfInterest].to_a.each do |id|
       if Feature.find_by( name: id ).nil?
         p "Create A New feature: #{id}"
         offering = database.find_by procedure: observation[:procedure]
         create_feature(id, offering)
+        @count_of_features += 1
       end
     end
-    p 'Feature updated done'
   end
 
   def create_feature(id, cache_offering)
